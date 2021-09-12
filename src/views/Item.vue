@@ -4,7 +4,7 @@
     </div>
 
     <div v-if="error" class="error">
-      {{ error }}
+        <PageNotFound />
     </div>
 
     <div class="container" v-if="item">
@@ -47,10 +47,12 @@
 
 <script>
 import RedeemModal from '@/components/RedeemModal.vue'
+import PageNotFound from '@/views/PageNotFound.vue'
 import axios from "axios"
 import * as bs from "bootstrap"
 window.bs = bs;
 export default {
+
     data: function() {
         return {
             item: null,
@@ -59,7 +61,8 @@ export default {
         };
     },
     components: {
-        RedeemModal
+        RedeemModal,
+        PageNotFound
     },
     methods: {
         
@@ -82,7 +85,9 @@ export default {
             }).catch(error => {
                 this.error = error.toString()
             })
-            .finally(() => this.loading = false)
+            .finally(() => {
+                this.loading = false
+            })
         },
         updateItem (item) {
             this.item = item;
