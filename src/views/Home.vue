@@ -9,6 +9,11 @@
           <div class="row row-cols-1 row-cols-sm-2 row-cols-md-2 row-cols-lg-3 row-cols-xl-3 g-3">     
             <RewardItem v-for="item in items" :key="item._id" v-bind:item="item" />
           </div>
+
+          <div class="row-cols-1 row-cols-sm-2 row-cols-md-2 row-cols-lg-3 row-cols-xl-3 g-3 pt-5" v-if="hasNext === 'Y'">
+            <button class="btn rounded-pill app-btn-bg-color btn-md col-lg-6 col-xl-6 col-sm-12 text-white"  @click="loadMore">Load more
+            </button>
+          </div>
         </div>
       </div>
     </div>
@@ -23,16 +28,27 @@ export default {
   },
   data: function() {
     return {
-      items: []
+      items: [],
+      pageNumber: 1,
+      count: 6,
+      api: '/reward/all',
+      hasNext: "N"
     };
   },
   methods:{
     fetchData(){
       axios
-      .get("/reward/all")
+      .get(`${this.api}?pageNumber=${this.pageNumber}&count=${this.count}`)
       .then(response => {
-        this.items = response.data
+        this.items = this.items.concat(response.data.items);
+        this.hasNext = response.data.hasNext;
+        if(this.hasNext === "Y"){
+          this.pageNumber =  this.pageNumber + 1;
+        }
       })
+    },
+    loadMore(){
+      this.fetchData();
     }
   },
   mounted(){
