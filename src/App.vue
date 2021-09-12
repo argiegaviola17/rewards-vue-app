@@ -1,7 +1,7 @@
 <template>
   <!-- <div />  -->
   <video autoplay muted loop id="video-top"  class="fixed-top"  >
-    <source src="http://192.168.1.2:8080/bg.mp4" type="video/mp4">
+    <source src="../src/assets/bg.mp4" type="video/mp4">
   </video>
   
    
