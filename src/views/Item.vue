@@ -19,7 +19,8 @@
                             <span id="name">Win a {{item.name}}</span>
                         </div>
                         <div class="row border-bottom mt-4 pb-4" >
-                            <button type="button"  class="btn  rounded-pill app-btn-bg-color col-sm-12 col-lg-6 col-md-6"   @click="showModal">Redeem ></button>
+                            <button v-if="item.quantity>0" type="button"  class="btn  rounded-pill app-btn-bg-color col-sm-12 col-lg-6 col-md-6"   @click="showModal">Redeem ></button>
+                            <button v-else type="button"  class="btn  rounded-pill app-btn-bg-color col-sm-12 col-lg-6 col-md-6" disabled>Redeem ></button>
                         </div>
                         <div class="row mt-3" >
                             <span id="stock">{{item.quantity}} left in stock</span>
