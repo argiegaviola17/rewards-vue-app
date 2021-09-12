@@ -8,18 +8,18 @@
     </div>
 
     <div class="container" v-if="item">
-        <div class="row border-bottom pb-5 pt-5 g-0">
-            <div class="col-12 col-sm-6 "  >
+        <div class="row pb-5 pt-5 g-0">
+            <div class="col-sm-12 col-md-12 col-lg-6 col-xl-6 mb-3"  >
                 <img style="height:400px" :src="item.imageUrl" class="img-fluid"/>
             </div>
-            <div class="col-12  col-sm-6" >
+            <div class="col-12  col-sm-6  col-xl-6" >
                 <div class="card text-start  px-3 py-3 col-12 col-sm-12 col-md-12 col-lg-8" >
                     <div class="card-body">
                         <div class="row border-bottom card-title pb-5" >
                             <span id="name">Win a {{item.name}}</span>
                         </div>
                         <div class="row border-bottom mt-4 pb-4" >
-                            <button type="button"  class="btn  rounded-pill app-btn-bg-color col-6"   @click="showModal">Redeem ></button>
+                            <button type="button"  class="btn  rounded-pill app-btn-bg-color col-sm-12 col-lg-6 col-md-6"   @click="showModal">Redeem ></button>
                         </div>
                         <div class="row mt-3" >
                             <span id="stock">{{item.quantity}} left in stock</span>
@@ -28,36 +28,15 @@
                 </div>
             </div>
         </div>
-        <!-- <div class="row border-bottom pb-5 pt-5 g-0">
-            <div class="col">
-                <img style="height:400px" :src="item.imageUrl" />
-            </div>
-
-            <div class="col">
-                <div class="card text-start px-3 py-3" style="width: 30rem;">
-                    <div class="card-body">
-                        <div class="border-bottom card-title pb-5">
-                            <span id="name">Win a {{item.name}}</span>
-                        </div>
-                        <div class="border-bottom mt-4 pb-4">
-                            <button type="button"  class="btn  rounded-pill app-btn-bg-color col-6"   @click="showModal">Redeem ></button>
-                        </div>
-                        <div class="mt-3">
-                            <span id="stock">{{item.quantity}} left in stock</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div> -->
     </div>
 
-    <div class="container " v-if="item">
+    <div class="container bg-white mb-5" v-if="item">
         <div class="row pb-5 pt-5 g-0">
-            <div class="col">
+            <div class="col-12 col-lg-4">
                 <span id="description-label">Description</span>
             </div>
 
-            <div class="col">
+            <div class="col-12 col-lg-8">
                 <span>{{item.description}}</span>
             </div>
         </div>
@@ -84,9 +63,6 @@ export default {
     methods: {
         
         async showModal( ) {
-            // const instance = bs.Modal.getInstance(document.getElementById("redeemModal") )
-            // instance.toggle()
-
             var myModal = new bs.Modal(document.getElementById('redeemModal'), {
                   keyboard: false
             })

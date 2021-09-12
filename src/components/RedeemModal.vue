@@ -11,14 +11,13 @@
                 </div>
                 <div class="modal-body mb-3">
                     <div class="row justify-content-center">
-                        <img :src="item.imageUrl" class="rounded-circle img-fluid mb-3" style="width:35%;height:220px;"/>
-                        <span>Redeeem for {{item.name}}</span>
+                        <img :src="item.imageUrl" class="rounded-circle img-fluid mb-3 col-sm-12 col-md-6 col-lg-4" />
+                        <span class="col-sm-12 ">Redeeem for {{item.name}}</span>
                     </div>
                 </div>
-                <div class="modal-footer justify-content-center">
-                    <!-- data-bs-target="#modalCongrats" data-bs-toggle="modal" data-bs-dismiss="modal" -->
-                    <button v-if="!loading" class="btn app-btn-bg-color col-3   rounded-pill"  v-on:click="redeemItem">Yes</button>
-                    <button v-if="!loading" type="button" class="btn col-3   rounded-pill app-btn-cancel-bg-color" data-bs-dismiss="modal" aria-label="Close">Cancel</button>
+                <div class="modal-footer justify-content-center row">
+                    <button v-if="!loading" class="btn app-btn-bg-color col-sm-12 col-md-3 col-lg-3  rounded-pill"  v-on:click="redeemItem">Yes</button>
+                    <button v-if="!loading" type="button" class="btn col-sm-12 col-md-3 col-lg-3   rounded-pill app-btn-cancel-bg-color" data-bs-dismiss="modal" aria-label="Close">Cancel</button>
                     <span v-if="loading">Loading...</span>
                 </div>
                 <div class="modal-footer justify-content-center  mb-3">
@@ -44,7 +43,7 @@
                     </div>
                 </div>
                 <div class="modal-footer justify-content-center mb-3">
-                    <button class="btn app-btn-bg-color col-3   rounded-pill" data-bs-dismiss="modal" @click="morePrizes">More Prizes</button>
+                    <button class="btn app-btn-bg-color col-sm-12 col-md-6 col-lg-6   rounded-pill" data-bs-dismiss="modal" @click="morePrizes">More Prizes</button>
                 </div>
             </div>
         </div>
@@ -107,7 +106,7 @@ export default {
 }
 #modalTitle {
     font-weight: 900;
-    font-size: 30px;
+    font-size: 25px;
 }
 
 #modalCongratsTitle {

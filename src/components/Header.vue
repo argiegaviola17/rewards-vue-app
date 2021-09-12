@@ -2,7 +2,7 @@
     <div class="container" >
         <header class="">
             <div class="row">
-                <div class="col-12 col-md-8" >
+                <div class="col-12 col-sm-12 col-md-8 col-lg-8" >
                     <div class="row">
                         <router-link :to="{ name: 'Home' }" style="text-decoration:none;">
                             <div class="fs-2 mb-3 text-white d-flex justify-content-start">
@@ -12,7 +12,7 @@
                          </router-link>
                     </div>
                 </div>
-                <div class="col-6 col-md-4">
+                <div class="col-12 col-sm-12 col-md-4 col-lg-4">
                     <div class="row">
                         <div class="fs-2 mb-3 text-white d-flex justify-content-end">
                             <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-person-circle  mt-2 me-2" viewBox="0 0 16 16">

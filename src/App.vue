@@ -1,13 +1,11 @@
 <template>
-  <div id="top">
-    <Header />
-    <Rewards />
-    <div id="core-display" class="container" >
-      <router-view/>
-    </div>
-    <Footer />
+  <div id="top" class="fixed-top"/> 
+  <Header />
+  <Rewards />
+  <div id="core-display" class="container" >
+    <router-view/>
   </div>
-  
+  <Footer />
   
 </template>
 
@@ -27,8 +25,8 @@
   background-repeat: no-repeat;
   background-position: center; 
   background-size: cover;
- 
-      
+  
+  z-index:-1000;    
   height: 800px; /* whatever the height of the background image is */
 }
 
