@@ -1,9 +1,10 @@
 <template>  
-    <div id="items" class="p-5">
+    <div id="items">
       <span id="items-header-name">Here is the full list of prizes that you can win.</span>
       <div class="py-5">
         <div class="container">
-          <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">     
+          <!-- row-cols-1 row-cols-sm-2 row-cols-md-3 g-3 -->
+          <div class="row row-cols-1 row-cols-sm-2 row-cols-md-2 row-cols-lg-3 row-cols-xl-3 g-3">     
             <RewardItem v-for="item in items" :key="item._id" v-bind:item="item" />
           </div>
         </div>

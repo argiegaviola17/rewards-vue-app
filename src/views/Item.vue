@@ -9,6 +9,26 @@
 
     <div class="container" v-if="item">
         <div class="row border-bottom pb-5 pt-5 g-0">
+            <div class="col-12 col-sm-6 "  >
+                <img style="height:400px" :src="item.imageUrl" class="img-fluid"/>
+            </div>
+            <div class="col-12  col-sm-6" >
+                <div class="card text-start  px-3 py-3 col-12 col-sm-12 col-md-12 col-lg-8" >
+                    <div class="card-body">
+                        <div class="row border-bottom card-title pb-5" >
+                            <span id="name">Win a {{item.name}}</span>
+                        </div>
+                        <div class="row border-bottom mt-4 pb-4" >
+                            <button type="button"  class="btn  rounded-pill app-btn-bg-color col-6"   @click="showModal">Redeem ></button>
+                        </div>
+                        <div class="row mt-3" >
+                            <span id="stock">{{item.quantity}} left in stock</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- <div class="row border-bottom pb-5 pt-5 g-0">
             <div class="col">
                 <img style="height:400px" :src="item.imageUrl" />
             </div>
@@ -20,8 +40,6 @@
                             <span id="name">Win a {{item.name}}</span>
                         </div>
                         <div class="border-bottom mt-4 pb-4">
-                            <!-- href="#redeemModal" -->
-                            <!-- data-bs-toggle="modal"  -->
                             <button type="button"  class="btn  rounded-pill app-btn-bg-color col-6"   @click="showModal">Redeem ></button>
                         </div>
                         <div class="mt-3">
@@ -30,7 +48,7 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div> -->
     </div>
 
     <div class="container " v-if="item">
