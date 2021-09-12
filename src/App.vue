@@ -1,5 +1,12 @@
 <template>
-  <div id="top" class="fixed-top"/> 
+  <!-- <div />  -->
+  <video autoplay muted loop id="video-top"  class="fixed-top"  >
+    <source src="http://192.168.1.2:8080/bg.mp4" type="video/mp4">
+  </video>
+  
+   
+  <div id="img-top" class="fixed-top" /> 
+
   <Header />
   <Rewards />
   <div id="core-display" class="container" >
@@ -17,10 +24,12 @@
   text-align: center;
   color: #2c3e50;
 }
-#core-display {
-  /* background-color: #f3f3f3; */
+ 
+#video-top{
+  width: 100%;
+  z-index:-1000;    
 }
-#top{
+#img-top{
   background-image: url("assets/main-bg.jpg");
   background-repeat: no-repeat;
   background-position: center; 
@@ -28,6 +37,49 @@
   
   z-index:-1000;    
   height: 800px; /* whatever the height of the background image is */
+}
+
+
+ 
+ 
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+ #video-top {
+     display: block;
+  }
+  #img-top {
+     display: none;
+  }
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+ #video-top {
+     display: block;
+  }
+  #img-top {
+     display: none;
+  }
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+   #video-top {
+     display: block;
+  }
+  #img-top {
+     display: none;
+  }
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+  #video-top {
+     display: block;
+  }
+  #img-top {
+     display: none;
+  }
 }
 
 </style>
@@ -41,8 +93,15 @@ export default {
     Header,
     Rewards,
     Footer
+  },
+  methods: {
+    isHomePage(){
+
+      return this.$route.name === "Home";
+    }
   }
 }
+
 </script>
 
 

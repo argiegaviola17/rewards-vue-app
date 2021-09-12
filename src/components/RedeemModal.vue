@@ -18,7 +18,7 @@
                     </div>
                 </div>
                 <div class="modal-footer justify-content-center row">
-                    <button v-if="!loading" class="btn app-btn-bg-color col-sm-12 col-md-3 col-lg-3  rounded-pill"  v-on:click="redeemItem">Yes</button>
+                    <button v-if="!loading" class="btn col-sm-12 col-md-3 col-lg-3 rounded-pill btn-outline-secondary"  v-on:click="redeemItem">Yes</button>
                     <button v-if="!loading" type="button" class="btn col-sm-12 col-md-3 col-lg-3   rounded-pill app-btn-cancel-bg-color" data-bs-dismiss="modal" aria-label="Close">Cancel</button>
                     <span v-if="loading">Loading...</span>
                 </div>
@@ -45,7 +45,7 @@
                     </div>
                 </div>
                 <div class="modal-footer justify-content-center mb-3">
-                    <button class="btn app-btn-bg-color col-sm-12 col-md-6 col-lg-6   rounded-pill" data-bs-dismiss="modal" @click="morePrizes">More Prizes</button>
+                    <button class="btn btn-outline-secondary col-sm-12 col-md-6 col-lg-6   rounded-pill" data-bs-dismiss="modal" @click="morePrizes">More Prizes</button>
                 </div>
             </div>
         </div>

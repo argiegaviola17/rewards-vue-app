@@ -5,3 +5,26 @@
 .app-btn-cancel-bg-color {
     background-color: #ebebeb;
 }
+.btn-outline-secondary{
+    border-color: #ffcf0b;
+    color: #ffcf0b;
+    font-size: 18px;
+}
+.btn-outline-secondary:hover{
+    border-color: #ffcf0b;
+    background-color: #ffcf0b;
+    color: white;
+    font-size: 18px;
+}
+
+
+.badge-primary {
+    background-color: #ffcf0b;
+    color: #fff;
+    letter-spacing: 1.5px;
+    font-size: 20px;
+}
+.item-name {
+    justify-content: center;
+    border-radius: 10px;
+}
