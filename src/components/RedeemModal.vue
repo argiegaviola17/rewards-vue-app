@@ -10,8 +10,10 @@
                     <h5 class="modal-title " id="modalTitle">Are you Sure ?</h5>
                 </div>
                 <div class="modal-body mb-3">
-                    <div class="row justify-content-center">
-                        <img :src="item.imageUrl" class="rounded-circle img-fluid mb-3 col-sm-12 col-md-6 col-lg-4" />
+                    <div class="row justify-content-center ">
+                        <div class="col-sm-12 col-md-6 col-lg-4" >
+                            <img  :src="item.imageUrl" class="img-fluid rounded-circle" width="200" height="200"/>
+                        </div>
                         <span class="col-sm-12 ">Redeeem for {{item.name}}</span>
                     </div>
                 </div>
