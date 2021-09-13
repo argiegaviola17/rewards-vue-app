@@ -2,7 +2,7 @@
     <div class="container-fluid ">
         <div class="row py-5 rouned-sm justify-content-center">
             <div class="col-lg-6 py-5" id="register">
-                <h1 class="text-center">Register Now</h1>
+                <h1 class="text-center">Forgot Password</h1>
                 <div  class="text-start ">
                     <dynamic-form :form="form" @change="valueChanged" />
                 </div>
@@ -11,9 +11,9 @@
                     Submit
                 </button>
                 <div>
-                    Already Registered. 
-                    <router-link :to="{ name: 'login' }">
-                        <label >Login</label>
+                    Don't Have an Account ?
+                    <router-link :to="{ name: 'register' }">
+                        <label >Create an account</label>
                     </router-link>
                 </div>
             </div>
@@ -25,31 +25,19 @@
 import { computed, defineComponent  } from 'vue';
 
 import {  
-  TextField,
-  EmailField,
-  CheckboxField
+  
+  EmailField 
 } from '@asigloo/vue-dynamic-forms';
-console.log(CheckboxField)
+ 
 export default defineComponent({
   name: 'Register',
   setup() {
     const form = computed(() => ({
       id: 'registerForm',
       fields: {
-        name: TextField({
-          label: 'Name',
-        }),
+         
         email: EmailField ({
             label: 'Email',
-        }),
-        password: TextField({
-            label: 'Password',
-        }),
-        confirmPassword: TextField({
-            label: 'Confirm Password',
-        }),
-        agree: CheckboxField({
-            label: 'I agree to the Terms of Service and Privacy Policy',
         }),
       },
     }));

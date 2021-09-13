@@ -14,12 +14,19 @@
                 </div>
                 <div class="col-12 col-sm-12 col-md-4 col-lg-4">
                     <div class="row">
-                        <div class="fs-2 mb-3 text-white d-flex justify-content-end">
+                        <div class="fs-2 mb-3 text-white d-flex justify-content-end" v-if="isLoggedIn()">
                             <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-person-circle  mt-2 me-2" viewBox="0 0 16 16">
                                 <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"></path>
                                 <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z"></path>
                             </svg>
                             John Smith
+                        </div>
+                        <div class="fs-2 mb-3 text-white d-flex justify-content-end" v-if="!isLoggedIn()">
+                            <router-link :to="{ name: 'register' }">
+                                <span class="btn rounded-pill btn-outline-secondary btn-md col-lg-12 col-xl-12 col-sm-12"  >
+                                    Register
+                                </span>
+                            </router-link>
                         </div>
                     </div>
                 </div>
@@ -36,5 +43,14 @@
     background-size: cover;
     /* padding: 20px; */
 }
- 
 </style>
+
+<script>
+export default {    
+    methods:{
+        isLoggedIn(){
+            return false
+        }
+    }
+}
+</script>

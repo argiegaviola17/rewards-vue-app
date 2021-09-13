@@ -28,6 +28,8 @@
 #video-top{
   width: 100%;
   z-index:-1000;    
+  filter: blur(8px);
+  -webkit-filter: blur(8px);
 }
 #img-top{
   background-image: url("assets/main-bg.jpg");
@@ -36,7 +38,9 @@
   background-size: cover;
   
   z-index:-1000;    
-  height: 800px; /* whatever the height of the background image is */
+  height: 800px;  
+  filter: blur(8px);
+  -webkit-filter: blur(8px);
 }
 
 

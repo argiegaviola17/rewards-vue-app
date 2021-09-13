@@ -8,6 +8,7 @@
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
+    "@asigloo/vue-dynamic-forms": "^3.16.3",
     "@popperjs/core": "^2.10.1",
     "@vue/cli-shared-utils": "^4.5.13",
     "axios": "^0.21.4",
