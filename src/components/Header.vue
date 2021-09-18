@@ -88,8 +88,6 @@
         padding-right: 33.33%;
     }
     .header_extra_small > .user_extra_small{
-        background-color: black;
-        color: white;
         opacity: 4;
         font-family: Sprint Sans Regular;
         font-size: 10vw;
