@@ -1,5 +1,5 @@
 <template>
-    <div id="core-display">  
+    <div id="core_display">  
       <div id="items">
         <div id="items-header-name" class="d-flex align-items-center justify-content-center">
           <label id="label">Here is the full list of prizes that you can win.</label>
@@ -10,6 +10,13 @@
         </div>
       </div>
     </div>
+
+    <div id="core_display_extra_small">
+      <div>Here is the full list of prizes</div>
+      <div style="margin-bottom:5%">that you can win.</div>
+      <RewardItem v-for="item in items" :key="item._id" v-bind:item="item" />
+    </div>
+    
 </template>
 
 <script>
@@ -49,26 +56,49 @@ export default {
   }
 }
 </script>
+ 
+<style lang="scss" scoped>
+@include media(">=desktop") { // desktop - 1024px
+  #core_display {  
+    height: 1187px;
+  }
+  #items-header-name {
+    height: 150px;
+  }
+  #content {
+    padding: 0px 78px 0px 78px;
+  }
+  #label{
+    font-family: Sprint Sans Regular;
+    letter-spacing: 0.5px;
+    margin-left: -16px;
+    font-size:20px;
+  }
 
-<style scoped>
-#items-header-name {
-  height: 150px;
-}
-#content {
-  padding: 0px 78px 0px 78px;
-}
-#label{
-  font-family: Sprint Sans Regular;
-  letter-spacing: 0.5px;
-  margin-left: -16px;
-  font-size:20px;
-}
-#core-display {  
-  height: 1187px;
-}
-</style>
+  #core_display_extra_small{
+    display: none !important;
+  }
 
-<style scoped lang="scss">
-
-
+}
+@include media(">=phone","<=tablet") { // tablet - 768px
+    #core_display{
+      display: none!important;
+    }
+}
+@include media(">=240px","<phone") { // 
+    #core_display{
+      display: none!important;
+    }
+}
+@include media(">=50px","<240px") {
+   #core_display{
+      display: none!important;
+    }
+    #core_display_extra_small{
+      display: block;
+      text-align: center;
+      padding: 3% 0% 3% 0%;
+      font-size: 6vw;
+    }
+}
 </style>
