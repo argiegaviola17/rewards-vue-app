@@ -1,24 +1,26 @@
 <template>
     <div class="modal fade" :id="id" data-bs-backdrop="static" data-bs-keyboard="false" aria-hidden="true" aria-labelledby="modalTitle" tabindex="-1">
         <div class="modal-dialog modal-dialog-centered  modal-lg">
-            <div class="modal-content">
-                <div class="modal-header  justify-content-center">
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" v-if="!loading"></button>
+            <div class="modal-content" id="modalMain">
+                <div class="modal-header  justify-content-end">
+                    <button type="button" class="btn py-0 px-0 mb-0"  data-bs-dismiss="modal" aria-label="Close" v-if="!loading">
+                        <img src="../assets/close_btn.png" style="width:26px;height:26px;object-fit:cover;"/>
+                    </button>
                 </div>
 
-                <div class="modal-header  justify-content-center">
+                <div class="modal-header  justify-content-center mt-0 py-0">
                     <h5 class="modal-title " id="modalTitle">Are you Sure ?</h5>
                 </div>
                 <div class="modal-body mb-3">
-                    <div class="row justify-content-center ">
-                        <div class="col-sm-12 col-md-6 col-lg-4" >
-                            <img  :src="item.imageUrl" class="img-fluid rounded-circle" width="200" height="200"/>
+                    <div class="row justify-content-center">
+                        <div class="col-sm-12 col-md-6 col-lg-4 mb-4" >
+                            <img  :src="item.imageUrl"  class="rounded-circle" style="width:204px;height:204px;object-fit:cover;"/>
                         </div>
-                        <span class="col-sm-12 ">Redeeem for {{item.name}}</span>
+                        <span class="col-sm-12  text-center" id="item-name">Redeeem for {{item.name}}?</span>
                     </div>
                 </div>
                 <div class="modal-footer justify-content-center row">
-                    <button v-if="!loading" class="btn col-sm-12 col-md-3 col-lg-3 rounded-pill btn-outline-secondary"  v-on:click="redeemItem">Yes</button>
+                    <button v-if="!loading" class="btn col-sm-12 col-md-3 col-lg-3 rounded-pill app-btn-bg-color"  v-on:click="redeemItem">Yes</button>
                     <button v-if="!loading" type="button" class="btn col-sm-12 col-md-3 col-lg-3   rounded-pill app-btn-cancel-bg-color" data-bs-dismiss="modal" aria-label="Close">Cancel</button>
                     <span v-if="loading">Loading...</span>
                 </div>
@@ -31,7 +33,7 @@
 
     <div class="modal fade" :id="congratsModalId" data-bs-backdrop="static" data-bs-keyboard="false"  aria-hidden="true" aria-labelledby="modalCongratsTitle" tabindex="-1">
         <div class="modal-dialog modal-dialog-centered  modal-lg">
-            <div class="modal-content">
+            <div class="modal-content" id="modalCongrats">
                 <div class="modal-header  justify-content-center">
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
@@ -39,13 +41,14 @@
                 <div class="modal-header  justify-content-center">
                     <h5 class="modal-title " id="modalTitle">Congratulations!</h5>
                 </div>
-                <div class="modal-body mb-3">
-                    <div class="row justify-content-center">
-                        <span>Your redeemed {{item.name}}.</span>
+                <div class="modal-body">
+                    <div class="row justify-content-center text-center" id="congrats-text-content">
+                        <span>Your redeemed </span>
+                        <span>{{item.name}}.</span>
                     </div>
                 </div>
                 <div class="modal-footer justify-content-center mb-3">
-                    <button class="btn btn-outline-secondary col-sm-12 col-md-6 col-lg-6   rounded-pill" data-bs-dismiss="modal" @click="morePrizes">More Prizes</button>
+                    <button class="btn app-btn-bg-color col-sm-12 col-md-6 col-lg-3   rounded-pill" data-bs-dismiss="modal" @click="morePrizes">More Prizes</button>
                 </div>
             </div>
         </div>
@@ -76,7 +79,7 @@ export default {
             this.$router.push({ name: 'Home' })
         },
         redeemItem(){
-            this.loading = true
+             this.loading = true
             axios
             .post("/reward/redeem",{id: this.item._id, versionNo: this.item.__v  })
             .then(response => {
@@ -108,10 +111,26 @@ export default {
 }
 #modalTitle {
     font-weight: 900;
-    font-size: 25px;
+    font-size: 30px;
+    font-family: Sprint Sans Bold;
 }
-
-#modalCongratsTitle {
-
+#modalMain{
+    width: 685px;
+    height: 501px;
 }
+#modalCongrats{
+    width: 638px;
+    height: 326px;
+}
+#modalCongrats > div.modal-body {
+    flex: none;
+}
+#congrats-text-content{
+    font-size: 17px;
+    font-family: Sprint Sans Regular;
+}
+#item-name{
+    font-family: Sprint Sans Regular;
+}
+ 
 </style>

@@ -1,28 +1,17 @@
 <template>
     <div class="col">
-        <div class="card shadow-sm border-0 rounded-0">
-            <!-- <div class="card-img-top  rounded-0 img-fluid" id="image" :style="getStyle()">  -->
-            <!-- </div> -->
-            <img :src="item.imageUrl" class="card-img-top"  id="image" width="300" height="300">
-            
-            <div class="card-body">
-                <!-- <p class="card-text pt-3 pb-3 col-12 ">
-                    <font style="vertical-align: inherit; font-weight:800" >
-                        Win a {{item.name}}
-                    </font>
-                </p> -->
-                <div class="item-name badge-primary col-sm-12 col-md-12 ">
+        <div class="r-item shadow-sm">
+            <img :src="item.imageUrl"  height="247" style="width:100%" />
+
+            <div >
+                <div class="r-item-title d-flex align-items-center justify-content-center">
                     Win a {{item.name}}
                 </div>
-            </div>
-            <div class="align-items-center pt-2 pb-3 card-footer">
+                <div class="d-flex justify-content-center align-items-center">
                     <router-link :to="{ name: 'item', params: { id: item._id }}">
-                        <span class="btn rounded-pill btn-outline-secondary btn-md col-lg-6 col-xl-6 col-sm-12"  >Redeem  
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right" viewBox="0 0 16 16">
-                                <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"/>
-                            </svg>
-                        </span>
+                        <span class="r-item-btn app-btn-bg-color col-lg-12 btn" style="text-decoration:none;" >Redeem ></span>
                     </router-link>
+                </div>
             </div>
         </div>
     </div>
@@ -46,20 +35,25 @@ export default {
 </script>
 
 <style scoped>
-#image {
-      
-    color: white;
-    object-fit: cover;
+.r-item{
+    width: 371px;
+    height: 471px;
+    border-radius: 5px;
+    background-color: white;
 }
-.card-footer {
-    padding: 48px 0 56px;
-    background: transparent;
-    border:0;
+.r-item > img {
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
 }
-.card:hover{
-    transform: scale(1.05);
-    box-shadow: 0 10px 20px rgba(0,0,0,.12), 0 4px 8px rgba(0,0,0,.06);
-    
+.r-item-title {
+    height: 144px;
+    width: 100%;
+    font-size: 20px;
+    font-weight: 800;
+    font-family: Sprint Sans Bold;
 }
-
+.r-item-btn {
+    width:162px;
+    border-radius: 50rem;
+}
 </style>

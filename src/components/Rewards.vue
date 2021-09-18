@@ -1,17 +1,17 @@
 <template>
-    <div class="container border-bottom" id="rewards">
-      <div class="pt-2 pb-3">
-        Rewards
-      </div>
+    <div  id="rewards" class="d-flex align-items-center justify-content-center">
+      Rewards
     </div>
 </template>
 
 <style scoped>
 #rewards {
+  height: 192px;
+  background-color: #0274bb;
   color: white;
-  font-size: 60px;  
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  /* padding: 60px; */
+  font-size: 35px;
+  font-weight: 800;
+  font-family: Sprint Sans Bold;
 }
- 
 </style>
+

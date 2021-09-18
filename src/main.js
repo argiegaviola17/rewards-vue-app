@@ -4,6 +4,7 @@ import router from './router'
 import 'bootstrap'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import './assets/css/app.css'
+import './assets/css/sprint-sans/style.css'
 import { createDynamicForms } from '@asigloo/vue-dynamic-forms';
 
 export const app = createApp(App)

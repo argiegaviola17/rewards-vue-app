@@ -7,31 +7,54 @@
         <PageNotFound />
     </div>
 
-    <div class="container" v-if="item">
-        <div class="row pb-5 pt-5 g-0">
-            <div class="col-sm-12 col-md-12 col-lg-12 col-xl-6 mb-3 gx-3"  >
-                <img :src="item.imageUrl" class="img-fluid" id="image"/>
+    <div class="container">
+        <div class="row" id="item">
+            <div class="row  g-0 border-bottom pb-5" >
+                <div class="col-6 me-1" style="border-radius:0px;">
+                    <img :src="item.imageUrl"   style="width:459px;height:418px;object-fit:cover;" />
+                </div>
+                <div class="col-6 ms-2" id="details">
+                   <div id="name" class="row border-bottom">
+                       <span >Win a {{item.name}}</span>
+                   </div>
+                    <div id="redeemBtn" class="row  border-bottom" >
+                        <button type="button" data-bs-toggle="modal" href="#exampleModalToggle" class="btn  rounded-pill app-btn-bg-color col-6"   @click="showModal">Redeem ></button>
+                    </div>
+                    <div id="stock" class="row">
+                        <span >{{item.quantity}} left in stock</span>
+                    </div>
+                </div>
             </div>
-            <div class="col-sm-6  col-md-12 col-lg-12 col-xl-6 " >
-                <div class="card text-start  px-3 py-3 col-sm-12 col-md-12 col-lg-12 col-xl-8" >
+            <div class="col-12 pt-5 pb-5"  >
+               <div class="row">
+                    <div class="col-2">
+                        <span id="description-label">Description</span>
+                    </div>
+                    <div class="col-10  ps-5">
+                        <span>{{item.description}}</span>
+                    </div>
+               </div>
+            </div>
+
+        </div>
+    </div>
+    <!-- <div class="container">
+        <div class="row border-bottom pb-5 pt-5 g-0">
+            <div class="col">
+                <img style="height:400px" :src="item.imageUrl" />
+            </div>
+
+            <div class="col">
+                <div class="card text-start px-3 py-3" style="width: 30rem;">
                     <div class="card-body">
-                        <div class="row border-bottom card-title pb-5" >
+                        <div class="border-bottom card-title pb-5">
                             <span id="name">Win a {{item.name}}</span>
                         </div>
-                        <div class="row border-bottom mt-4 pb-4" >
-                            <button v-if="item.quantity>0" type="button"  class="btn  rounded-pill btn-outline-secondary col-sm-12 col-lg-6 col-md-6"   @click="showModal">Redeem 
-                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right" viewBox="0 0 16 16">
-                                    <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"/>
-                                </svg>
-                            </button>
-                            <button v-else type="button"  class="btn  rounded-pill btn-outline-secondary  col-sm-12 col-lg-6 col-md-6" disabled>Redeem 
-                                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right" viewBox="0 0 16 16">
-                                    <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"/>
-                                </svg>
-                            </button>
+                        <div class="border-bottom mt-4 pb-4">
+                            <button type="button" data-bs-toggle="modal" href="#exampleModalToggle" class="btn  rounded-pill app-btn-bg-color col-6"   @click="redeemItem">Redeem ></button>
                         </div>
-                        <div class="row mt-3" >
-                            <span id="stock">{{item.quantity}} left in stock</span>
+                        <div class="mt-3">
+                            <span id="stock">{{item.qty}} left in stock</span>
                         </div>
                     </div>
                 </div>
@@ -39,17 +62,17 @@
         </div>
     </div>
 
-    <div class="container bg-white mb-5" v-if="item">
+    <div class="container ">
         <div class="row pb-5 pt-5 g-0">
-            <div class="col-12 col-lg-4">
+            <div class="col">
                 <span id="description-label">Description</span>
             </div>
 
-            <div class="col-12 col-lg-8">
+            <div class="col">
                 <span>{{item.description}}</span>
             </div>
         </div>
-    </div>
+    </div>-->
     <RedeemModal id="redeemModal" congratsModalId="congratsModal"  v-bind:item="item" v-if="item" v-on:updateItem="updateItem" />
 </template>
 
@@ -118,18 +141,32 @@ export default {
     font-size: 30px;
     font-weight:900;
     font-stretch: ultra-condensed;
+    font-family: Sprint Sans Bold;
+    padding-bottom: 66px;
+}
+#redeemBtn {
+    padding-top: 32px;
+    padding-bottom: 32px;
 }
 #stock {
     font-size: 15px;
+    padding-top: 14px;
 }
 #description-label{
     font-size: 25px;
     font-weight:900;
     font-stretch: ultra-condensed;
 }
-#image {
-      
-    color: white;
-    object-fit: cover;
+#item {
+    padding-left: 178px;
+    padding-right: 178px;
+    padding-top: 36px;
+}
+#details{
+    width: 459px;
+    height: 306px;
+    border-radius: 5px;
+    background-color: white;
+    padding: 29px 33px 46px 33px;
 }
 </style>

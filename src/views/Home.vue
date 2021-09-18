@@ -1,19 +1,12 @@
-<template>  
-    <div id="items">
-      <div class="pt-5">
-        <span id="items-header-name">Here is the full list of prizes that you can win.</span>
-      </div>
-      <div class="py-5">
-        <div class="container">
-          <!-- row-cols-1 row-cols-sm-2 row-cols-md-3 g-3 -->
-          <div class="row row-cols-1 row-cols-sm-2 row-cols-md-2 row-cols-lg-3 row-cols-xl-3 g-3">     
-            <RewardItem v-for="item in items" :key="item._id" v-bind:item="item" />
-          </div>
+<template>
+    <div id="core-display">  
+      <div id="items">
+        <div id="items-header-name" class="d-flex align-items-center justify-content-center">
+          <label id="label">Here is the full list of prizes that you can win.</label>
+        </div>
 
-          <div class="row-cols-1 row-cols-sm-2 row-cols-md-2 row-cols-lg-3 row-cols-xl-3 g-3 pt-5" v-if="hasNext === 'Y'">
-            <button class="btn rounded-pill app-btn-bg-color btn-md col-lg-6 col-xl-6 col-sm-12 text-white"  @click="loadMore">Load more
-            </button>
-          </div>
+        <div id="content" class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+          <RewardItem v-for="item in items" :key="item._id" v-bind:item="item" />
         </div>
       </div>
     </div>
@@ -58,11 +51,24 @@ export default {
 </script>
 
 <style scoped>
-
 #items-header-name {
-  font-size:25px;
-  color: white;
-  font-weight: bold;
+  height: 150px;
 }
+#content {
+  padding: 0px 78px 0px 78px;
+}
+#label{
+  font-family: Sprint Sans Regular;
+  letter-spacing: 0.5px;
+  margin-left: -16px;
+  font-size:20px;
+}
+#core-display {  
+  height: 1187px;
+}
+</style>
+
+<style scoped lang="scss">
+
 
 </style>

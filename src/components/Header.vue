@@ -1,56 +1,107 @@
 <template>
-    <div class="container" >
-        <header class="">
-            <div class="row">
-                <div class="col-12 col-sm-12 col-md-8 col-lg-8" >
-                    <div class="row">
-                        <router-link :to="{ name: 'Home' }" style="text-decoration:none;">
-                            <div class="fs-2 mb-3 text-white d-flex justify-content-start">
-                                <img src="../assets/logo-2.png" width="50" height="50" class=" mt-1  me-2"/>
-                                AG Company
-                            </div>
-                         </router-link>
-                    </div>
-                </div>
-                <div class="col-12 col-sm-12 col-md-4 col-lg-4">
-                    <div class="row">
-                        <div class="fs-2 mb-3 text-white d-flex justify-content-end" v-if="isLoggedIn()">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-person-circle  mt-2 me-2" viewBox="0 0 16 16">
-                                <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"></path>
-                                <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z"></path>
-                            </svg>
-                            John Smith
-                        </div>
-                        <div class="fs-2 mb-3 text-white d-flex justify-content-end" v-if="!isLoggedIn()">
-                            <router-link :to="{ name: 'register' }">
-                                <span class="btn rounded-pill btn-outline-secondary btn-md col-lg-12 col-xl-12 col-sm-12"  >
-                                    Register
-                                </span>
-                            </router-link>
-                        </div>
-                    </div>
-                </div>
+    <div id="header" class="d-flex row mx-0 ps-3" >
+        <div id="logo_div" class="d-flex justify-content-start align-items-center col-6 col-md-6">
+            <router-link :to="{ name: 'Home' }" style="text-decoration:none;color:black">
+                <img alt="APP logo" src="../assets/app-logo.png" height="48" id="app_logo">
+                &nbsp;&nbsp;
+                <label id="company_name">AG Company</label>
+            </router-link>
+            
+        </div>
+ 
+        <div id="name_div" class="d-flex justify-content-end col-12 col-md-6 pe-5" >
+            <div class="rounded-circle align-self-center" style="width:46px;height:46px;" >
+                <svg xmlns="http://www.w3.org/2000/svg" width="46" height="46" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
+                    <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/>
+                    <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z"/>
+                </svg>
             </div>
-        </header>
-  </div>
+            <span id="name" style="margin-left:10px;" class="py-4">Argie Gaviola</span>
+        </div>
+    </div>
+
+    <div class="header_extra_small" >
+        <!-- <div>
+            <span id="name" >Argie Gaviola</span>
+        </div> -->
+        <div class="logo_extra_small">
+            <img alt="APP logo" src="../assets/app-logo.png" style="width:100%;height:auto ">
+        </div>
+        
+        <div class="user_extra_small">
+            <svg xmlns="http://www.w3.org/2000/svg" style="padding-right:2%" width="30" height="30" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
+                    <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/>
+                    <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z"/>
+            </svg>
+            <label >Argie Gaviola</label>         
+        </div>
+    </div>
 </template>
 
-<style scoped>
-#logo {
-    background-image: linear-gradient(to bottom, rgba(121, 100, 90, 0.52), rgba(100, 0, 14, 0.4)),url('../assets/logo.jpeg');
-    width: 100px;
-    height: 100px;
-    background-size: cover;
-    /* padding: 20px; */
-}
-</style>
 
-<script>
-export default {    
-    methods:{
-        isLoggedIn(){
-            return false
-        }
+<style lang="scss" scoped>
+
+
+@include media(">=desktop") {
+    #header {
+        height: 81px;
+    }
+    #name {
+        font-size: 13px;
+        letter-spacing: 0.3px;
+        font-family: Sprint Sans Medium;
+    }
+    #name_div_mobile {
+        display: none !important;;
+    }
+    #header{
+        background-color: white;
+    }
+    #company_name {
+        font-size: 30px;
+        font-weight: normal;
+    }
+
+    .header_extra_small{
+        display: none;
     }
 }
-</script>
+@include media(">=phone","<=tablet") {    
+    .header_extra_small{
+        display: none;
+    }
+}
+
+@include media(">=240px","<phone") {
+    .header_extra_small{
+        display: none;
+    }
+}
+
+@include media(">=50px","<240px") {
+    #header{
+        display: none!important;
+    }
+    .header_extra_small{
+        background-color: white;
+    }  
+    .header_extra_small > .logo_extra_small{
+        padding-left: 33.33%;
+        padding-right: 33.33%;
+    }
+    .header_extra_small > .user_extra_small{
+        background-color: black;
+        color: white;
+        opacity: 4;
+        font-family: Sprint Sans Regular;
+        font-size: 10vw;
+        padding-left: 5%;        
+    }    
+}
+
+@include media(">=50px","<119px") {
+    .user_extra_small > svg {
+        display: none!important;
+    }
+}
+</style>
