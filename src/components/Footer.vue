@@ -49,9 +49,8 @@
     width: 100%;
     height: auto;
     font-size: 5vw;
-    text-align: center;
-    vertical-align: middle;
-    
+    text-align: center;    
+    padding: 5% 0% 5% 0%;
   }
 }
 </style>
