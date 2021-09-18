@@ -21,9 +21,7 @@
     </div>
 
     <div class="header_extra_small" >
-        <!-- <div>
-            <span id="name" >Argie Gaviola</span>
-        </div> -->
+      
         <div class="logo_extra_small">
             <img alt="APP logo" src="../assets/app-logo.png" style="width:100%;height:auto ">
         </div>
@@ -95,7 +93,9 @@
         opacity: 4;
         font-family: Sprint Sans Regular;
         font-size: 10vw;
-        padding-left: 5%;        
+        padding-left: 5%;   
+        text-align: center;
+        vertical-align: middle;     
     }    
 }
 

@@ -4,7 +4,7 @@
       <Header />
       <Rewards />
       <router-view/>
-      <Footer />
+      <Footer /> 
    </div>
  </div>
 </template>
