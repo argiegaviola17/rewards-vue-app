@@ -7,7 +7,7 @@
         <PageNotFound />
     </div>
 
-    <div class="container">
+    <div class="container" v-if="item">
         <div class="row" id="item">
             <div class="row  g-0 border-bottom pb-5" >
                 <div class="col-6 me-1" style="border-radius:0px;">
@@ -18,7 +18,7 @@
                        <span >Win a {{item.name}}</span>
                    </div>
                     <div id="redeemBtn" class="row  border-bottom" >
-                        <button type="button" data-bs-toggle="modal" href="#exampleModalToggle" class="btn  rounded-pill app-btn-bg-color col-6"   @click="showModal">Redeem ></button>
+                        <button type="button"   href="#exampleModalToggle" class="btn  rounded-pill app-btn-bg-color col-6"   @click="showModal">Redeem ></button>
                     </div>
                     <div id="stock" class="row">
                         <span >{{item.quantity}} left in stock</span>
