@@ -79,6 +79,7 @@ export default {
         display: none!important;
     }
 }
+
 // @include media(">=phone","<=tablet") { // tablet - 768px
 //     .r-item-wrapper{
 //         display: none!important;

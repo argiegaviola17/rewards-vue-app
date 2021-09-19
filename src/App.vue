@@ -32,25 +32,16 @@
 </style>
 
 <style lang="scss" scoped>
-@include media(">=desktop") { // desktop - 1024px
+@include media(">=1600px") { // desktop - 1024px
     #wrapper {
-        width: 1301px;
+      width: 1301px;
     }
     #main {
       width: 1301px;
     }
 }
-// @include media(">=phone","<=tablet") { // tablet - 768px
-//     #wrapper {
-//       width: 100%;
-//       padding: 0px;
-//     }
-//     #main {
-//       width: 100%;
-//       padding: 0px;
-//     }
-// }
- 
+
+
 @include media(">=50px","<=480px") {
     #wrapper {
       width: 100%;

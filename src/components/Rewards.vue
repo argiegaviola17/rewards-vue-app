@@ -9,12 +9,10 @@
 
 <style  lang="scss" scoped>
 
-@include media(">=desktop") { // desktop - 1024px
+@include media(">480px") { 
     #rewards {
-      height: 192px;
       background-color: #0274bb;
       color: white;
-      font-size: 35px;
       font-weight: 800;
       font-family: Sprint Sans Bold;
     }
@@ -22,11 +20,19 @@
       display: none!important;
     }
 }
-// @include media(">=phone","<=tablet") { // tablet - 768px
-//      #rewards_extra_small{
-//       display: none!important;
-//     }
-// }
+
+@include media(">desktop") { // desktop - 1024px
+    #rewards {
+      height: 192px;
+      font-size: 35px;
+    }
+}
+@include media(">480px","<=desktop") { 
+    #rewards {
+      height: 15vw;
+      font-size: 5vw;
+    }
+}
  
 @include media(">=50px","<=480px") {
     #rewards{

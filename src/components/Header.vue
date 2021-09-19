@@ -6,10 +6,10 @@
                 &nbsp;&nbsp;
                 <label id="company_name">AG Company</label>
             </router-link>
-            
+
         </div>
  
-        <div id="name_div" class="d-flex justify-content-end col-12 col-md-6 pe-5" >
+        <div id="name_div" class="d-flex justify-content-end col-6 col-md-6 pe-5" >
             <div class="rounded-circle align-self-center" style="width:46px;height:46px;" >
                 <svg xmlns="http://www.w3.org/2000/svg" width="46" height="46" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
                     <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/>
@@ -49,10 +49,7 @@
         font-size: 13px;
         letter-spacing: 0.3px;
         font-family: Sprint Sans Medium;
-    }
-    #name_div_mobile {
-        display: none !important;;
-    }
+    }    
     #header{
         background-color: white;
     }
@@ -64,12 +61,19 @@
     .header_extra_small{
         display: none;
     }
+ 
 }
-// @include media(">=phone","<=tablet") {    
-//     .header_extra_small{
-//         display: none;
-//     }
-// }
+
+@include media(">480px","<desktop"){
+   .header_extra_small{
+       display: none!important;
+   }
+  
+   #header{
+        display: flex!important;
+        background-color: white;
+   }
+}
 
  
 @include media(">=50px","<=480px") {

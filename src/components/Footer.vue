@@ -13,7 +13,7 @@
 
 <style lang="scss" scoped>
 
-@include media(">=desktop") {
+@include media(">480px") {
   #footer {
     height: 228px;  
     background: linear-gradient(81deg, rgba(7,7,7,1) 0%, rgba(25,25,25,1) 100%);
@@ -26,11 +26,10 @@
     display: none !important;
   }
 }
-// @include media(">=phone","<=tablet") {    
-//    #extra_small_footer{
-//     display: none !important;
-//   } 
-// }
+@include media(">480px","<desktop"){
+   
+}
+
 
 @include media(">=50px","<=480px") {
   #footer {
