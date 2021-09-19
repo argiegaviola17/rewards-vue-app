@@ -125,7 +125,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@include media(">=desktop") { // desktop - 1024px
+@include media(">=1600px") { // desktop - 1024px
     #name {
         font-size: 30px;
         font-weight:900;
@@ -162,14 +162,60 @@ export default {
         display: none;
     }
 }
-// @include media(">=phone","<=tablet") { // tablet - 768px
-//     .container{
-//         display: none!important;
-//     }
-//     .container_extra_small{
-//         display: block;
-//     }
-// }
+ 
+
+@include media(">480px","<1600px") { // tablet - 768px
+    .container{
+        display: none!important;
+    }
+    .container_extra_small{
+        display: block;
+
+        padding: 5% 20% 5% 20%;
+
+        .details {
+            background-color: white;            
+            border-end-end-radius: 5%;
+            border-end-start-radius: 5%;
+            margin-bottom: 10%;
+            padding: 0% 3% 0% 3%;
+
+            .name {
+                font-size: 4vw;
+                font-family: Sprint Sans Bold;
+            }
+
+            .redeemBtnDiv{
+                width: 100%;
+                padding: 4vw 0vw 4vw 0vw;
+                text-align: center;
+                height: auto;
+                
+                .redeemBtn  {
+                    border: 1px solid transparent ;
+                    font-size: 3vw ;
+                    border-radius: 50rem;
+                }   
+            }
+             
+            .stock{
+                font-size: 2vw;
+                padding: 4% 0% 5% 0%;
+            }
+        }
+
+        .description_label {
+            text-align: center;
+            font-size: 3vw;
+             font-family: Sprint Sans Bold;
+        }
+
+        .description {
+            text-align: center;
+            font-size: 2vw;
+        }
+    }
+}
  
 @include media(">=50px","<=480px") {
     .container{
