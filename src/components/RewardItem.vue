@@ -15,6 +15,18 @@
         </div>
     </div>
 
+    <div class="col d-flex justify-content-center align-items-center item-responsive" >
+        <div class="card" style="width: 18rem;">
+            <img :src="item.imageUrl" class="card-img-top" alt="...">
+            <div class="card-body pb-3">
+                <h5 class="card-title pb-5">Win a {{item.name}}</h5>
+                <router-link :to="{ name: 'item', params: { id: item._id }}">
+                    <span class="  app-btn-bg-color btn rounded-pill" style="text-decoration:none;" >Redeem ></span>
+                </router-link>
+            </div>
+        </div>
+    </div>
+
     <div class="col r-item-wrapper-extra-small" >
         <div class="r-item shadow-sm">
             <img :src="item.imageUrl" style="width:100%;height:auto" />
@@ -52,7 +64,7 @@ export default {
  
 
 <style lang="scss" scoped>
-@include media(">=desktop") { // desktop - 1024px
+@include media(">=1600px") {
     .r-item{
         width: 371px;
         height: 471px;
@@ -78,19 +90,29 @@ export default {
     .r-item-wrapper-extra-small{
         display: none!important;
     }
+    .item-responsive{
+        display: none!important;
+    }
 }
 
-// @include media(">=phone","<=tablet") { // tablet - 768px
-//     .r-item-wrapper{
-//         display: none!important;
-//     }
-//     .r-item-wrapper-extra-small{
-//         display: block;
-//     }
-// }
+@include media(">480px","<1600px") { // tablet - 768px
+    .r-item-wrapper{
+        display: none!important;
+    }
+    .r-item-wrapper-extra-small{
+        display: none!important;
+    }
+    .item-responsive{
+        display: flex!important;
+        text-align: center;
+    }
+}
  
 @include media(">=50px","<=480px") {
     .r-item-wrapper{
+        display: none!important;
+    }
+    .item-responsive{
         display: none!important;
     }
     .r-item-wrapper-extra-small{
@@ -108,7 +130,7 @@ export default {
         font-size: 8vw;
         font-family: Sprint Sans Bold;
         text-align: center;
-        margin-bottom: 5%;
+        margin-bottom: 15%;
     }
     .r-item-btn{
         width: 100%;

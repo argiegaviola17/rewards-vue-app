@@ -58,7 +58,7 @@ export default {
 </script>
  
 <style lang="scss" scoped>
-@include media(">=desktop") { // desktop - 1024px
+@include media(">=1600px") { // desktop - 1024px
   #core_display {  
     height: 1187px;
   }
@@ -80,11 +80,21 @@ export default {
   }
 
 }
-// @include media(">=phone","<=tablet") { // tablet - 768px
-//     #core_display{
-//       display: none!important;
-//     }
-// }
+
+@include media(">480px","<1600px") { // tablet - 768px
+    #core_display{
+      display: block;
+    }
+    #content {
+      padding: 20px 1em 20px 1em;
+    }
+    #items-header-name{
+      padding-top: 20px;
+    }
+    #core_display_extra_small{
+      display: none!important;
+    }
+}
  
 @include media(">=50px","<=480px") {
    #core_display{
