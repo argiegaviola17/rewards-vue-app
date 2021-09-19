@@ -1,7 +1,7 @@
 <template>
     <div class="modal fade" :id="id" data-bs-backdrop="static" data-bs-keyboard="false" aria-hidden="true" aria-labelledby="modalTitle" tabindex="-1">
-        <div class="modal-dialog modal-dialog-centered  modal-lg">
-            <div class="modal-content" id="modalMain">
+        <div class="modal-dialog modal-dialog-centered  modal-lg" >
+            <div class="modal-content" id="modalMain"  >
                 <div class="modal-header  justify-content-end">
                     <button type="button" class="btn py-0 px-0 mb-0"  data-bs-dismiss="modal" aria-label="Close" v-if="!loading">
                         <img src="../assets/close_btn.png" style="width:26px;height:26px;object-fit:cover;"/>
@@ -22,9 +22,37 @@
                 <div class="modal-footer justify-content-center row">
                     <button v-if="!loading" class="btn col-sm-12 col-md-3 col-lg-3 rounded-pill app-btn-bg-color"  v-on:click="redeemItem">Yes</button>
                     <button v-if="!loading" type="button" class="btn col-sm-12 col-md-3 col-lg-3   rounded-pill app-btn-cancel-bg-color" data-bs-dismiss="modal" aria-label="Close">Cancel</button>
-                    <span v-if="loading">Loading...</span>
+                    <span v-if="loading" style="text-align:center">Loading...</span>
                 </div>
                 <div class="modal-footer justify-content-center  mb-3">
+                    <span v-if="error" class="text-danger">{{error}}</span>
+                </div>
+            </div>
+
+            <div class="modal-content modal_extra_small">
+                <div class="close_btn_div">
+                    <button type="button" class="close_btn"   data-bs-dismiss="modal" aria-label="Close" v-if="!loading">
+                        <img src="../assets/close_btn.png" style="width:8vw;height:8vw;object-fit:cover;"/>
+                    </button>
+                </div>
+
+                <div class="ask_div" >
+                    <span  >Are you Sure ?</span>
+                </div>
+                <div class="img_name">
+                    <div class=""  >
+                        <div class="pb-3" >
+                            <img  :src="item.imageUrl"  class="rounded-circle" style="width:40vw;height:40vw;object-fit:cover;"/>
+                        </div>
+                        <span class="text-center"  >Redeeem for {{item.name}}?</span>
+                    </div>
+                </div>
+                <div class="buttons"  >
+                    <button v-if="!loading" type="button" class=" app-btn-bg-color  "  v-on:click="redeemItem">Yes</button>
+                    <button v-if="!loading" type="button" class=" app-btn-cancel-bg-color " data-bs-dismiss="modal" aria-label="Close">Cancel</button>
+                    <span v-if="loading" >Loading...</span>
+                </div>
+                <div class="error"  >
                     <span v-if="error" class="text-danger">{{error}}</span>
                 </div>
             </div>
@@ -79,7 +107,7 @@ export default {
             this.$router.push({ name: 'Home' })
         },
         redeemItem(){
-             this.loading = true
+            this.loading = true
             axios
             .post("/reward/redeem",{id: this.item._id, versionNo: this.item.__v  })
             .then(response => {
@@ -102,35 +130,104 @@ export default {
 }
 </script>
 
-<style scoped>
-.modal-header {
-    border-bottom: white;
+<style lang="scss" scoped>
+@include media(">=desktop") { // desktop - 1024px
+    .modal-header {
+        border-bottom: white;
+    }
+    .modal-footer {
+        border-top: white;
+    }
+    #modalTitle {
+        font-weight: 900;
+        font-size: 30px;
+        font-family: Sprint Sans Bold;
+    }
+    #modalMain{
+        width: 685px;
+        height: 501px;
+    }
+    #modalCongrats{
+        width: 638px;
+        height: 326px;
+    }
+    #modalCongrats > div.modal-body {
+        flex: none;
+    }
+    #congrats-text-content{
+        font-size: 17px;
+        font-family: Sprint Sans Regular;
+    }
+    #item-name{
+        font-family: Sprint Sans Regular;
+    }
+
+    .modal_extra_small{
+        display: none!important;
+    }
 }
-.modal-footer {
-    border-top: white;
+@include media(">=phone","<=tablet") { // tablet - 768px
+    #modalMain {
+        display: none!important;
+    }
+    .modal_extra_small{
+        display: none!important;
+    }
 }
-#modalTitle {
-    font-weight: 900;
-    font-size: 30px;
-    font-family: Sprint Sans Bold;
+@include media(">=240px","<phone") { // 
+    #modalMain {
+        display: none!important;
+    }
+     .modal_extra_small{
+        display: none!important;
+    }
 }
-#modalMain{
-    width: 685px;
-    height: 501px;
+@include media(">=50px","<240px") {
+    #modalMain {
+        display: none!important;
+    }
+    .modal-dialog{
+        margin:2%!important
+    }   
+    .modal_extra_small {
+        text-align: center;
+        padding-bottom: 10%;
+
+        .close_btn_div {
+            text-align: right;
+            .close_btn{
+                border:1px solid white;
+                background-color:white;
+                border-start-end-radius: 10%;
+            }
+        }
+        .ask_div{
+            font-size:10vw;
+            font-family: Sprint Sans Bold;
+        }
+        .img_name{
+            font-size:6vw
+        }
+        .buttons{
+            display: flex;
+            padding-top: 5%;
+            
+            flex-direction: column;
+            padding-left: 20%;
+            padding-right: 20%;
+        
+            [type=button] {
+                border: 1px solid transparent!important;   
+                border-radius: 5em;
+                margin-top:5%;
+                font-size: 5vw;
+                padding-top: 3%;
+                padding-bottom: 3%;
+            }
+        }
+        .error{
+
+        }
+    }
 }
-#modalCongrats{
-    width: 638px;
-    height: 326px;
-}
-#modalCongrats > div.modal-body {
-    flex: none;
-}
-#congrats-text-content{
-    font-size: 17px;
-    font-family: Sprint Sans Regular;
-}
-#item-name{
-    font-family: Sprint Sans Regular;
-}
- 
 </style>
