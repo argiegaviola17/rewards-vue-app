@@ -219,6 +219,7 @@ export default {
         .description_label {
             text-align: center;
             font-size: 8vw;
+             font-family: Sprint Sans Bold;
         }
 
         .description {
