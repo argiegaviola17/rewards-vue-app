@@ -189,17 +189,60 @@ export default {
         display: none!important;
     }
 }
-// @include media(">=phone","<=tablet") { // tablet - 768px
-//     #modalCongrats {
-//         display: none!important;
-//     }
-//     #modalMain {
-//         display: none!important;
-//     }
-//     .modal_extra_small{
-//         display: none!important;
-//     }
-// }
+
+@include media(">480px","<desktop") { // tablet - 768px
+    #modalMain {
+        display: none!important;
+    }
+    #modalCongrats {
+        display: none!important;
+    }
+    .modal-dialog{
+        margin:none!important
+    } 
+    .modal_extra_small {
+        text-align: center;
+        padding-bottom: 10%;
+
+        .close_btn_div {
+            text-align: right;
+            .close_btn{
+                border:1px solid white;
+                background-color:white;
+                border-start-end-radius: 10%;
+                img {
+                    width: 4vw!important;
+                    height:4vw!important;
+                }
+            }
+        }
+        .ask_div{
+            font-size:5vw;
+            font-family: Sprint Sans Bold;
+        }
+        .img_name{
+            font-size:4vw
+        }
+        .buttons{
+            display: flex;
+            padding-top: 5%;
+            
+            flex-direction: column;
+            padding-left: 30%;
+            padding-right: 30%;
+        
+            [type=button] {
+                border: 1px solid transparent!important;   
+                border-radius: 5em;
+                margin-top:2%;
+                font-size: 3vw;
+                padding-top: 3%;
+                padding-bottom: 3%;
+            }
+        }  
+    }
+
+}
  
 @include media(">=50px","<=480px") {
     #modalMain {
