@@ -86,7 +86,7 @@ export default {
 //     }
 // }
  
-@include media(">=50px","<=phone") {
+@include media(">=50px","<=480px") {
    #core_display{
       display: none!important;
     }

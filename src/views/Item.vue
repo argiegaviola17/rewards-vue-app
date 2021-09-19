@@ -171,7 +171,7 @@ export default {
 //     }
 // }
  
-@include media(">=50px","<=phone") {
+@include media(">=50px","<=480px") {
     .container{
         display: none!important;
     }

@@ -72,7 +72,7 @@
 // }
 
  
-@include media(">=50px","<=phone") {
+@include media(">=50px","<=480px") {
     #header{
         display: none!important;
     }
@@ -91,6 +91,13 @@
         text-align: center;
         vertical-align: middle;     
     }    
+}
+
+@include media(">=236px","<=480px"){
+    .user_extra_small > svg {
+        width: 15vw;
+        height: 15vw;
+    }
 }
 
 @include media(">=50px","<119px") {

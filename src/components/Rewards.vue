@@ -28,7 +28,7 @@
 //     }
 // }
  
-@include media(">=50px","<=phone") {
+@include media(">=50px","<=480px") {
     #rewards{
       display: none !important;
     }

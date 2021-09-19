@@ -41,7 +41,7 @@
 //     }
 // }
  
-@include media(">=50px","<=phone") {
+@include media(">=50px","<=480px") {
     #wrapper {
       width: 100%;
       padding-left: 0px!important;
@@ -63,7 +63,15 @@ export default {
     Header,
     Rewards,
     Footer
-  }
+  },
+  methods:{
+    scrollToTop(){
+      window.scrollTo(0,0);
+    }
+  },
+  watch: {
+    '$route': 'scrollToTop'
+  },
 }
 </script>
 

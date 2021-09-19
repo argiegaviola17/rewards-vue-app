@@ -201,7 +201,7 @@ export default {
 //     }
 // }
  
-@include media(">=50px","<=phone") {
+@include media(">=50px","<=480px") {
     #modalMain {
         display: none!important;
     }

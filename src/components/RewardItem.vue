@@ -88,7 +88,7 @@ export default {
 //     }
 // }
  
-@include media(">=50px","<=phone") {
+@include media(">=50px","<=480px") {
     .r-item-wrapper{
         display: none!important;
     }

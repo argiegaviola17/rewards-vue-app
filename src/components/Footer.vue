@@ -32,7 +32,7 @@
 //   } 
 // }
 
-@include media(">=50px","<=phone") {
+@include media(">=50px","<=480px") {
   #footer {
     display: none !important;
   } 
