@@ -170,15 +170,8 @@ export default {
         display: block;
     }
 }
-@include media(">=240px","<phone") { // 
-    .container{
-        display: none!important;
-    }
-    .container_extra_small{
-        display: block;
-    }
-}
-@include media(">=50px","<240px") {
+ 
+@include media(">=50px","<phone") {
     .container{
         display: none!important;
     }

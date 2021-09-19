@@ -32,13 +32,7 @@
   } 
 }
 
-@include media(">=240px","<phone") {
-  #extra_small_footer{
-    display: none !important;
-  }  
-}
-
-@include media(">=50px","<240px") {
+@include media(">=50px","<phone") {
   #footer {
     display: none !important;
   } 

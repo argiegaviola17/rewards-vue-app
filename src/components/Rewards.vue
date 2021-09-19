@@ -27,12 +27,8 @@
       display: none!important;
     }
 }
-@include media(">=240px","<phone") { // 
-     #rewards_extra_small{
-      display: none!important;
-    }
-}
-@include media(">=50px","<240px") {
+ 
+@include media(">=50px","<phone") {
     #rewards{
       display: none !important;
     }

@@ -85,12 +85,8 @@ export default {
       display: none!important;
     }
 }
-@include media(">=240px","<phone") { // 
-    #core_display{
-      display: none!important;
-    }
-}
-@include media(">=50px","<240px") {
+ 
+@include media(">=50px","<phone") {
    #core_display{
       display: none!important;
     }

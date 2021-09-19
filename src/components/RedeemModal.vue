@@ -200,18 +200,8 @@ export default {
         display: none!important;
     }
 }
-@include media(">=240px","<phone") { // 
-    #modalMain {
-        display: none!important;
-    }
-    #modalCongrats {
-        display: none!important;
-    }
-    .modal_extra_small{
-        display: none!important;
-    }
-}
-@include media(">=50px","<240px") {
+ 
+@include media(">=50px","<phone") {
     #modalMain {
         display: none!important;
     }

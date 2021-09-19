@@ -71,13 +71,8 @@
     }
 }
 
-@include media(">=240px","<phone") {
-    .header_extra_small{
-        display: none;
-    }
-}
-
-@include media(">=50px","<240px") {
+ 
+@include media(">=50px","<phone") {
     #header{
         display: none!important;
     }
