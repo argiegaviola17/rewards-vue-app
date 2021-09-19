@@ -189,18 +189,21 @@ export default {
         .details {
             background-color: white;
             padding: 2% 3% 4% 3%;
-            border-radius: 5%;
+            border-end-end-radius: 5%;
+            border-end-start-radius: 5%;
             margin-bottom: 10%;
 
             .name {
                 font-size: 9vw;
                 font-family: Sprint Sans Bold;
+                 
             }
 
             .redeemBtnDiv{
                 width: 100%;
-                padding: 4% 0% 5% 0%;
+                padding: 4vw 0vw 5vw 0vw;
                 text-align: center;
+                height: auto;
                 
                 .redeemBtn  {
                     border: 1px solid transparent ;
