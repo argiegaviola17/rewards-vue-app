@@ -38,41 +38,30 @@
 
         </div>
     </div>
-    <!-- <div class="container">
-        <div class="row border-bottom pb-5 pt-5 g-0">
-            <div class="col">
-                <img style="height:400px" :src="item.imageUrl" />
-            </div>
 
-            <div class="col">
-                <div class="card text-start px-3 py-3" style="width: 30rem;">
-                    <div class="card-body">
-                        <div class="border-bottom card-title pb-5">
-                            <span id="name">Win a {{item.name}}</span>
-                        </div>
-                        <div class="border-bottom mt-4 pb-4">
-                            <button type="button" data-bs-toggle="modal" href="#exampleModalToggle" class="btn  rounded-pill app-btn-bg-color col-6"   @click="redeemItem">Redeem ></button>
-                        </div>
-                        <div class="mt-3">
-                            <span id="stock">{{item.qty}} left in stock</span>
-                        </div>
-                    </div>
-                </div>
+    <div v-if="item" class="container_extra_small">
+        <img :src="item.imageUrl" style="width:100%;height:auto" />
+        <div class="details ">
+            <div class="name border-bottom">
+                <span >Win a {{item.name}}</span>
             </div>
+            <div  class="redeemBtnDiv border-bottom" >
+                <button type="button"   href="#exampleModalToggle" class="  app-btn-bg-color redeemBtn"   @click="showModal">Redeem ></button>
+            </div>
+            <div class="stock row">
+                <span >{{item.quantity}} left in stock</span>
+            </div>
+        </div>
+
+        <div  class="description_label border-top">
+            <span  >Description</span>
+        </div>
+
+        <div  class="description">
+            <span>{{item.description}}</span>
         </div>
     </div>
-
-    <div class="container ">
-        <div class="row pb-5 pt-5 g-0">
-            <div class="col">
-                <span id="description-label">Description</span>
-            </div>
-
-            <div class="col">
-                <span>{{item.description}}</span>
-            </div>
-        </div>
-    </div>-->
+     
     <RedeemModal id="redeemModal" congratsModalId="congratsModal"  v-bind:item="item" v-if="item" v-on:updateItem="updateItem" />
 </template>
 
@@ -81,7 +70,6 @@ import RedeemModal from '@/components/RedeemModal.vue'
 import PageNotFound from '@/views/PageNotFound.vue'
 import axios from "axios"
 import * as bs from "bootstrap"
-window.bs = bs;
 export default {
 
     data: function() {
@@ -136,37 +124,108 @@ export default {
 }
 </script>
 
-<style scoped>
-#name {
-    font-size: 30px;
-    font-weight:900;
-    font-stretch: ultra-condensed;
-    font-family: Sprint Sans Bold;
-    padding-bottom: 66px;
+<style lang="scss" scoped>
+@include media(">=desktop") { // desktop - 1024px
+    #name {
+        font-size: 30px;
+        font-weight:900;
+        font-stretch: ultra-condensed;
+        font-family: Sprint Sans Bold;
+        padding-bottom: 66px;
+    }
+    #redeemBtn {
+        padding-top: 32px;
+        padding-bottom: 32px;
+    }
+    #stock {
+        font-size: 15px;
+        padding-top: 14px;
+    }
+    #description-label{
+        font-size: 25px;
+        font-weight:900;
+        font-stretch: ultra-condensed;
+    }
+    #item {
+        padding-left: 178px;
+        padding-right: 178px;
+        padding-top: 36px;
+    }
+    #details{
+        width: 459px;
+        height: 306px;
+        border-radius: 5px;
+        background-color: white;
+        padding: 29px 33px 46px 33px;
+    }
+    .container_extra_small{
+        display: none;
+    }
 }
-#redeemBtn {
-    padding-top: 32px;
-    padding-bottom: 32px;
+@include media(">=phone","<=tablet") { // tablet - 768px
+    .container{
+        display: none!important;
+    }
+    .container_extra_small{
+        display: block;
+    }
 }
-#stock {
-    font-size: 15px;
-    padding-top: 14px;
+@include media(">=240px","<phone") { // 
+    .container{
+        display: none!important;
+    }
+    .container_extra_small{
+        display: block;
+    }
 }
-#description-label{
-    font-size: 25px;
-    font-weight:900;
-    font-stretch: ultra-condensed;
-}
-#item {
-    padding-left: 178px;
-    padding-right: 178px;
-    padding-top: 36px;
-}
-#details{
-    width: 459px;
-    height: 306px;
-    border-radius: 5px;
-    background-color: white;
-    padding: 29px 33px 46px 33px;
+@include media(">=50px","<240px") {
+    .container{
+        display: none!important;
+    }
+    .container_extra_small{
+        display: block;
+        padding: 5% 2% 5% 2%;
+
+        .details {
+            background-color: white;
+            padding: 2% 3% 4% 3%;
+            border-radius: 5%;
+            margin-bottom: 10%;
+
+            .name {
+                font-size: 9vw;
+                font-family: Sprint Sans Bold;
+            }
+
+            .redeemBtnDiv{
+                width: 100%;
+                padding: 4% 0% 5% 0%;
+                text-align: center;
+                
+                .redeemBtn  {
+                    border: 1px solid transparent ;
+                    font-size: 7vw ;
+                    border-radius: 50rem;
+                    
+                }   
+            }
+             
+            .stock{
+                font-size: 5vw;
+                padding: 4% 0% 5% 0%;
+            }
+        }
+
+        .description_label {
+            text-align: center;
+            font-size: 8vw;
+        }
+
+        .description {
+            text-align: center;
+            font-size: 7vw;
+        }
+        
+    }
 }
 </style>
