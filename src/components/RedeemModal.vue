@@ -79,6 +79,29 @@
                     <button class="btn app-btn-bg-color col-sm-12 col-md-6 col-lg-3   rounded-pill" data-bs-dismiss="modal" @click="morePrizes">More Prizes</button>
                 </div>
             </div>
+
+            <div class="modal-content modal_extra_small"  >
+                <div class="close_btn_div">
+                    <button type="button" class="close_btn"   data-bs-dismiss="modal" aria-label="Close" >
+                        <img src="../assets/close_btn.png" style="width:8vw;height:8vw;object-fit:cover;"/>
+                    </button>
+                </div>
+
+                <div class="ask_div" >
+                    <span  >Congratulations!</span>
+                </div>
+
+                 <div class="img_name">
+                    <div class=""  >
+                        <span>Your redeemed </span>
+                        <span>{{item.name}}.</span>
+                    </div>
+                </div>
+
+                <div class="buttons" >
+                    <button type="button" class="app-btn-bg-color" data-bs-dismiss="modal" @click="morePrizes">More Prizes</button>
+                </div>
+            </div>
         </div>
     </div>
 </template>
@@ -167,6 +190,9 @@ export default {
     }
 }
 @include media(">=phone","<=tablet") { // tablet - 768px
+    #modalCongrats {
+        display: none!important;
+    }
     #modalMain {
         display: none!important;
     }
@@ -178,12 +204,18 @@ export default {
     #modalMain {
         display: none!important;
     }
-     .modal_extra_small{
+    #modalCongrats {
+        display: none!important;
+    }
+    .modal_extra_small{
         display: none!important;
     }
 }
 @include media(">=50px","<240px") {
     #modalMain {
+        display: none!important;
+    }
+    #modalCongrats {
         display: none!important;
     }
     .modal-dialog{
@@ -224,10 +256,9 @@ export default {
                 padding-top: 3%;
                 padding-bottom: 3%;
             }
-        }
-        .error{
-
-        }
+        }  
     }
+
+    
 }
 </style>
