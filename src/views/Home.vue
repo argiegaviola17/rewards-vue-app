@@ -80,13 +80,13 @@ export default {
   }
 
 }
-@include media(">=phone","<=tablet") { // tablet - 768px
-    #core_display{
-      display: none!important;
-    }
-}
+// @include media(">=phone","<=tablet") { // tablet - 768px
+//     #core_display{
+//       display: none!important;
+//     }
+// }
  
-@include media(">=50px","<phone") {
+@include media(">=50px","<=phone") {
    #core_display{
       display: none!important;
     }

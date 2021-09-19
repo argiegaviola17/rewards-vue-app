@@ -30,18 +30,18 @@
       width: 1301px;
     }
 }
-@include media(">=phone","<=tablet") { // tablet - 768px
-    #wrapper {
-      width: 100%;
-      padding: 0px;
-    }
-    #main {
-      width: 100%;
-      padding: 0px;
-    }
-}
+// @include media(">=phone","<=tablet") { // tablet - 768px
+//     #wrapper {
+//       width: 100%;
+//       padding: 0px;
+//     }
+//     #main {
+//       width: 100%;
+//       padding: 0px;
+//     }
+// }
  
-@include media(">=50px","<phone") {
+@include media(">=50px","<=phone") {
     #wrapper {
       width: 100%;
       padding-left: 0px!important;

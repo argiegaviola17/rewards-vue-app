@@ -26,13 +26,13 @@
     display: none !important;
   }
 }
-@include media(">=phone","<=tablet") {    
-   #extra_small_footer{
-    display: none !important;
-  } 
-}
+// @include media(">=phone","<=tablet") {    
+//    #extra_small_footer{
+//     display: none !important;
+//   } 
+// }
 
-@include media(">=50px","<phone") {
+@include media(">=50px","<=phone") {
   #footer {
     display: none !important;
   } 

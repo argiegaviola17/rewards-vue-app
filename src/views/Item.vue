@@ -162,16 +162,16 @@ export default {
         display: none;
     }
 }
-@include media(">=phone","<=tablet") { // tablet - 768px
-    .container{
-        display: none!important;
-    }
-    .container_extra_small{
-        display: block;
-    }
-}
+// @include media(">=phone","<=tablet") { // tablet - 768px
+//     .container{
+//         display: none!important;
+//     }
+//     .container_extra_small{
+//         display: block;
+//     }
+// }
  
-@include media(">=50px","<phone") {
+@include media(">=50px","<=phone") {
     .container{
         display: none!important;
     }

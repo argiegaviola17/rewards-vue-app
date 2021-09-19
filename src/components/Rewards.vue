@@ -22,13 +22,13 @@
       display: none!important;
     }
 }
-@include media(">=phone","<=tablet") { // tablet - 768px
-     #rewards_extra_small{
-      display: none!important;
-    }
-}
+// @include media(">=phone","<=tablet") { // tablet - 768px
+//      #rewards_extra_small{
+//       display: none!important;
+//     }
+// }
  
-@include media(">=50px","<phone") {
+@include media(">=50px","<=phone") {
     #rewards{
       display: none !important;
     }

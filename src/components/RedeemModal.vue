@@ -189,19 +189,19 @@ export default {
         display: none!important;
     }
 }
-@include media(">=phone","<=tablet") { // tablet - 768px
-    #modalCongrats {
-        display: none!important;
-    }
-    #modalMain {
-        display: none!important;
-    }
-    .modal_extra_small{
-        display: none!important;
-    }
-}
+// @include media(">=phone","<=tablet") { // tablet - 768px
+//     #modalCongrats {
+//         display: none!important;
+//     }
+//     #modalMain {
+//         display: none!important;
+//     }
+//     .modal_extra_small{
+//         display: none!important;
+//     }
+// }
  
-@include media(">=50px","<phone") {
+@include media(">=50px","<=phone") {
     #modalMain {
         display: none!important;
     }

@@ -65,14 +65,14 @@
         display: none;
     }
 }
-@include media(">=phone","<=tablet") {    
-    .header_extra_small{
-        display: none;
-    }
-}
+// @include media(">=phone","<=tablet") {    
+//     .header_extra_small{
+//         display: none;
+//     }
+// }
 
  
-@include media(">=50px","<phone") {
+@include media(">=50px","<=phone") {
     #header{
         display: none!important;
     }

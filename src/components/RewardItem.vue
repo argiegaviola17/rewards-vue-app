@@ -79,16 +79,16 @@ export default {
         display: none!important;
     }
 }
-@include media(">=phone","<=tablet") { // tablet - 768px
-    .r-item-wrapper{
-        display: none!important;
-    }
-    .r-item-wrapper-extra-small{
-        display: block;
-    }
-}
+// @include media(">=phone","<=tablet") { // tablet - 768px
+//     .r-item-wrapper{
+//         display: none!important;
+//     }
+//     .r-item-wrapper-extra-small{
+//         display: block;
+//     }
+// }
  
-@include media(">=50px","<phone") {
+@include media(">=50px","<=phone") {
     .r-item-wrapper{
         display: none!important;
     }
